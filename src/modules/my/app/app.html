@@ -1,0 +1,31 @@
+<template>
+    <div class="center">
+        <img src="/resources/lwc.png" />
+    </div>
+
+    <div class="toDo">
+       
+        <div class="header">
+            <h2>My To Do List</h2>
+            <input 
+                type="text"  
+                placeholder="Type Here..."
+                onchange={handleToDoChanges} 
+            >
+            <span  class="addBtn"  value={taskDetails} onclick={handleToDo}>Add</span>
+
+        </div>
+       
+         <ul>
+            <template for:each={todos} for:item="todo">
+                <li key={todo.id}>
+                    {todo.taskDetails}
+                </li>
+            </template>
+        </ul>
+
+        
+    </div>
+   
+
+</template>
